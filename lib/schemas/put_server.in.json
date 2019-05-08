@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "attributes": {
+                    "additionalProperties": true,
+                    "type": "object"
+                },
+                "bingKey": {
+                    "type": "string"
+                },
+                "coordinateFormat": {
+                    "type": "string"
+                },
+                "deviceReadonly": {
+                    "type": "boolean"
+                },
+                "forceSettings": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "latitude": {
+                    "type": "number"
+                },
+                "limitCommands": {
+                    "type": "boolean"
+                },
+                "longitude": {
+                    "type": "number"
+                },
+                "map": {
+                    "type": "string"
+                },
+                "mapUrl": {
+                    "type": "string"
+                },
+                "poiLayer": {
+                    "type": "string"
+                },
+                "readonly": {
+                    "type": "boolean"
+                },
+                "registration": {
+                    "type": "boolean"
+                },
+                "twelveHourFormat": {
+                    "type": "boolean"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "zoom": {
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

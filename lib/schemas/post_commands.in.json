@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "attributes": {
+                    "additionalProperties": true,
+                    "type": "object"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "deviceId": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

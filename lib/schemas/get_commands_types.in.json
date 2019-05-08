@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "properties": {
+        "deviceId": {
+            "type": "integer"
+        },
+        "textChannel": {
+            "type": "boolean"
+        }
+    }
+}

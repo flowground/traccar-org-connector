@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "deviceId": {
+            "type": "array",
+            "items": {
+                "type": "integer"
+            }
+        },
+        "groupId": {
+            "type": "array",
+            "items": {
+                "type": "integer"
+            }
+        },
+        "from": {
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+        },
+        "to": {
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+        }
+    }
+}

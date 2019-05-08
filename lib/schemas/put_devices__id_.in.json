@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "properties": {
+                "attributes": {
+                    "additionalProperties": true,
+                    "type": "object"
+                },
+                "category": {
+                    "type": "string"
+                },
+                "contact": {
+                    "type": "string"
+                },
+                "disabled": {
+                    "type": "boolean"
+                },
+                "geofenceIds": {
+                    "items": {
+                        "type": "integer"
+                    },
+                    "type": "array"
+                },
+                "groupId": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "lastUpdate": {
+                    "description": "in IS0 8601 format. eg. `1963-11-22T18:30:00Z`",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "model": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "positionId": {
+                    "type": "integer"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "uniqueId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

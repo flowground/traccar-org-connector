@@ -1,0 +1,1037 @@
+{
+    "title": "traccar",
+    "description": "Open Source GPS Tracking Platform",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/traccar.org/4.3/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://demo.traccar.org/api",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "username": {
+                "label": "Username (basicAuth)",
+                "viewClass": "TextFieldView",
+                "note": "Basic HTTP authorization with _email_ and _password_"
+            },
+            "password": {
+                "label": "Password (basicAuth)",
+                "viewClass": "TextFieldView",
+                "note": "Basic HTTP authorization with _email_ and _password_"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_attributes_computed": {
+            "main": "./lib/actions/get_attributes_computed.js",
+            "title": "Fetch a list of Attributes",
+            "description": "Without params, it returns a list of Attributes the user has access to",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_attributes_computed.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_attributes_computed": {
+            "main": "./lib/actions/post_attributes_computed.js",
+            "title": "Create an Attribute",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_attributes_computed.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_attributes_computed__id_": {
+            "main": "./lib/actions/delete_attributes_computed__id_.js",
+            "title": "Delete an Attribute",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_attributes_computed__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_attributes_computed__id_": {
+            "main": "./lib/actions/put_attributes_computed__id_.js",
+            "title": "Update an Attribute",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_attributes_computed__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_calendars": {
+            "main": "./lib/actions/get_calendars.js",
+            "title": "Fetch a list of Calendars",
+            "description": "Without params, it returns a list of Calendars the user has access to",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_calendars.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_calendars": {
+            "main": "./lib/actions/post_calendars.js",
+            "title": "Create a Calendar",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_calendars.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_calendars__id_": {
+            "main": "./lib/actions/delete_calendars__id_.js",
+            "title": "Delete a Calendar",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_calendars__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_calendars__id_": {
+            "main": "./lib/actions/put_calendars__id_.js",
+            "title": "Update a Calendar",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_calendars__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_commands": {
+            "main": "./lib/actions/get_commands.js",
+            "title": "Fetch a list of Saved Commands",
+            "description": "Without params, it returns a list of Drivers the user has access to",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_commands.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_commands": {
+            "main": "./lib/actions/post_commands.js",
+            "title": "Create a Saved Command",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_commands.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_commands_send": {
+            "main": "./lib/actions/get_commands_send.js",
+            "title": "Fetch a list of Saved Commands supported by Device at the moment",
+            "description": "Return a list of saved commands linked to Device and its groups, filtered by current Device protocol support",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_commands_send.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_commands_send": {
+            "main": "./lib/actions/post_commands_send.js",
+            "title": "Dispatch commands to device",
+            "description": "Dispatch a new command or Saved Command if _body.id_ set",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_commands_send.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_commands_types": {
+            "main": "./lib/actions/get_commands_types.js",
+            "title": "Fetch a list of available Commands for the Device or all possible Commands if Device ommited",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_commands_types.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_commands__id_": {
+            "main": "./lib/actions/delete_commands__id_.js",
+            "title": "Delete a Saved Command",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_commands__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_commands__id_": {
+            "main": "./lib/actions/put_commands__id_.js",
+            "title": "Update a Saved Command",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_commands__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_devices": {
+            "main": "./lib/actions/get_devices.js",
+            "title": "Fetch a list of Devices",
+            "description": "Without any params, returns a list of the user's devices",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_devices.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_devices": {
+            "main": "./lib/actions/post_devices.js",
+            "title": "Create a Device",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_devices.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_devices__id_": {
+            "main": "./lib/actions/delete_devices__id_.js",
+            "title": "Delete a Device",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_devices__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_devices__id_": {
+            "main": "./lib/actions/put_devices__id_.js",
+            "title": "Update a Device",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_devices__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_devices__id__accumulators": {
+            "main": "./lib/actions/put_devices__id__accumulators.js",
+            "title": "Update total distance and hours of the Device",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_devices__id__accumulators.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_drivers": {
+            "main": "./lib/actions/get_drivers.js",
+            "title": "Fetch a list of Drivers",
+            "description": "Without params, it returns a list of Drivers the user has access to",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_drivers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_drivers": {
+            "main": "./lib/actions/post_drivers.js",
+            "title": "Create a Driver",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_drivers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_drivers__id_": {
+            "main": "./lib/actions/delete_drivers__id_.js",
+            "title": "Delete a Driver",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_drivers__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_drivers__id_": {
+            "main": "./lib/actions/put_drivers__id_.js",
+            "title": "Update a Driver",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_drivers__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_events__id_": {
+            "main": "./lib/actions/get_events__id_.js",
+            "title": "get_events__id_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_events__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_geofences": {
+            "main": "./lib/actions/get_geofences.js",
+            "title": "Fetch a list of Geofences",
+            "description": "Without params, it returns a list of Geofences the user has access to",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_geofences.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_geofences": {
+            "main": "./lib/actions/post_geofences.js",
+            "title": "Create a Geofence",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_geofences.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_geofences__id_": {
+            "main": "./lib/actions/delete_geofences__id_.js",
+            "title": "Delete a Geofence",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_geofences__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_geofences__id_": {
+            "main": "./lib/actions/put_geofences__id_.js",
+            "title": "Update a Geofence",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_geofences__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups": {
+            "main": "./lib/actions/get_groups.js",
+            "title": "Fetch a list of Groups",
+            "description": "Without any params, returns a list of the Groups the user belongs to",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_groups": {
+            "main": "./lib/actions/post_groups.js",
+            "title": "Create a Group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_groups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_groups__id_": {
+            "main": "./lib/actions/delete_groups__id_.js",
+            "title": "Delete a Group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_groups__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_groups__id_": {
+            "main": "./lib/actions/put_groups__id_.js",
+            "title": "Update a Group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_groups__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_maintenance": {
+            "main": "./lib/actions/get_maintenance.js",
+            "title": "Fetch a list of Maintenance",
+            "description": "Without params, it returns a list of Maintenance the user has access to",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_maintenance.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_maintenance": {
+            "main": "./lib/actions/post_maintenance.js",
+            "title": "Create a Maintenance",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_maintenance.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_maintenance__id_": {
+            "main": "./lib/actions/delete_maintenance__id_.js",
+            "title": "Delete a Maintenance",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_maintenance__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_maintenance__id_": {
+            "main": "./lib/actions/put_maintenance__id_.js",
+            "title": "Update a Maintenance",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_maintenance__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_notifications": {
+            "main": "./lib/actions/get_notifications.js",
+            "title": "Fetch a list of Notifications",
+            "description": "Without params, it returns a list of Notifications the user has access to",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_notifications.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_notifications": {
+            "main": "./lib/actions/post_notifications.js",
+            "title": "Create a Notification",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_notifications.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_notifications_test": {
+            "main": "./lib/actions/post_notifications_test.js",
+            "title": "Send test notification to current user via Email and SMS",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_notifications_test.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_notifications_types": {
+            "main": "./lib/actions/get_notifications_types.js",
+            "title": "Fetch a list of available Notification types",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_notifications_types.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_notifications__id_": {
+            "main": "./lib/actions/delete_notifications__id_.js",
+            "title": "Delete a Notification",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_notifications__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_notifications__id_": {
+            "main": "./lib/actions/put_notifications__id_.js",
+            "title": "Update a Notification",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_notifications__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_permissions": {
+            "main": "./lib/actions/delete_permissions.js",
+            "title": "Unlink an Object from another Object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_permissions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_permissions": {
+            "main": "./lib/actions/post_permissions.js",
+            "title": "Link an Object to another Object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_permissions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_positions": {
+            "main": "./lib/actions/get_positions.js",
+            "title": "Fetches a list of Positions",
+            "description": "Without any params, it returns a list of last known positions for all the user's Devices. _from_ and _to_ fields are not required with _id_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_positions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_reports_events": {
+            "main": "./lib/actions/get_reports_events.js",
+            "title": "Fetch a list of Events within the time period for the Devices or Groups",
+            "description": "At least one _deviceId_ or one _groupId_ must be passed",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_reports_events.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_reports_route": {
+            "main": "./lib/actions/get_reports_route.js",
+            "title": "Fetch a list of Positions within the time period for the Devices or Groups",
+            "description": "At least one _deviceId_ or one _groupId_ must be passed",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_reports_route.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_reports_stops": {
+            "main": "./lib/actions/get_reports_stops.js",
+            "title": "Fetch a list of ReportStops within the time period for the Devices or Groups",
+            "description": "At least one _deviceId_ or one _groupId_ must be passed",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_reports_stops.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_reports_summary": {
+            "main": "./lib/actions/get_reports_summary.js",
+            "title": "Fetch a list of ReportSummary within the time period for the Devices or Groups",
+            "description": "At least one _deviceId_ or one _groupId_ must be passed",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_reports_summary.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_reports_trips": {
+            "main": "./lib/actions/get_reports_trips.js",
+            "title": "Fetch a list of ReportTrips within the time period for the Devices or Groups",
+            "description": "At least one _deviceId_ or one _groupId_ must be passed",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_reports_trips.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_server": {
+            "main": "./lib/actions/get_server.js",
+            "title": "Fetch Server information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_server.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_server": {
+            "main": "./lib/actions/put_server.js",
+            "title": "Update Server information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_server.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_session": {
+            "main": "./lib/actions/delete_session.js",
+            "title": "Close the Session",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_session.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_session": {
+            "main": "./lib/actions/get_session.js",
+            "title": "Fetch Session information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_session.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_session": {
+            "main": "./lib/actions/post_session.js",
+            "title": "Create a new Session",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_session.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_statistics": {
+            "main": "./lib/actions/get_statistics.js",
+            "title": "Fetch server Statistics",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_statistics.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users": {
+            "main": "./lib/actions/get_users.js",
+            "title": "Fetch a list of Users",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_users": {
+            "main": "./lib/actions/post_users.js",
+            "title": "Create a User",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_users__id_": {
+            "main": "./lib/actions/delete_users__id_.js",
+            "title": "Delete a User",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_users__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_users__id_": {
+            "main": "./lib/actions/put_users__id_.js",
+            "title": "Update a User",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_users__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

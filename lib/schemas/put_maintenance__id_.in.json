@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "properties": {
+                "attributes": {
+                    "additionalProperties": true,
+                    "type": "object"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "period": {
+                    "type": "number"
+                },
+                "start": {
+                    "type": "number"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

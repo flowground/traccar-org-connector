@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "all": {
+            "type": "boolean"
+        },
+        "userId": {
+            "type": "integer"
+        },
+        "id": {
+            "required": false,
+            "type": "integer"
+        },
+        "uniqueId": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

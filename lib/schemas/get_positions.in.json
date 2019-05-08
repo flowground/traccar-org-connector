@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "deviceId": {
+            "required": false,
+            "type": "integer"
+        },
+        "from": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "to": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "id": {
+            "required": false,
+            "type": "integer"
+        }
+    }
+}

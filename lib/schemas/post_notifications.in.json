@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "always": {
+                    "type": "boolean"
+                },
+                "attributes": {
+                    "additionalProperties": true,
+                    "type": "object"
+                },
+                "calendarId": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "mail": {
+                    "type": "boolean"
+                },
+                "sms": {
+                    "type": "boolean"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "web": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

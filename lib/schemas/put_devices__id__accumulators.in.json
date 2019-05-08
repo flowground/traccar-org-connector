@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "properties": {
+                "deviceId": {
+                    "type": "integer"
+                },
+                "hours": {
+                    "type": "number"
+                },
+                "totalDistance": {
+                    "description": "in meters",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

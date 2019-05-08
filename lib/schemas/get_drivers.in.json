@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "all": {
+            "type": "boolean"
+        },
+        "userId": {
+            "type": "integer"
+        },
+        "deviceId": {
+            "type": "integer"
+        },
+        "groupId": {
+            "type": "integer"
+        },
+        "refresh": {
+            "required": false,
+            "type": "boolean"
+        }
+    }
+}
